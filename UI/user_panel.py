@@ -1,9 +1,9 @@
 import sys
 import PySide6.QtCore
 from PySide6.QtWidgets import QDialog, QApplication, QWidget, QMainWindow
-from dialogs.ui_ChangePassDialog import Ui_ChangePassDialog
-from dialogs.ui_IncorrectPassDialog import Ui_IncorrectPassDialog
-from dialogs.ui_SuccessAutorizeDialog import Ui_SuccessAutorizeDialog
+from AppHotel.UI.ui_ChangePassDialog import Ui_ChangePassDialog
+from AppHotel.UI.ui_IncorrectPassDialog import Ui_IncorrectPassDialog
+from AppHotel.UI.ui_SuccessAutorizeDialog import Ui_SuccessAutorizeDialog
 
 class UserPanel(QDialog):
     def __init__(self):
@@ -14,7 +14,7 @@ class UserPanel(QDialog):
         self.user_ui.change_pass_button.clicked.connect(lambda: self.change_password())
 
     def change_password(self):
-        from handler_db import Handler
+        from HandL import Handler
         hand = Handler()
         old_passw = self.user_ui.old_password_input.toPlainText()
         new_passw = self.user_ui.new_password_input.toPlainText()

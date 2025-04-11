@@ -1,8 +1,9 @@
 import sqlite3, sys
+import AppHotel.Main.Gostiniza
 
 class Handler():
     def key_autorization(handler, login, passw):
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('Guest.db')
         cur = conn.cursor()
 
         cur.execute("SELECT * FROM Accounts WHERE username = ?", (login,))
@@ -10,7 +11,7 @@ class Handler():
 
         if user_data != None:
             if user_data[5] >= 3:
-                cur.execute("UPDATE Accounts SET account_status = ? WHERE username = ?", ("Забаннен", login,))
+                cur.execute("UPDATE Accounts SET account_status = ? WHERE username = ?", ("Забанен", login,))
                 conn.commit()
                 cur.close()
                 conn.close()
@@ -32,7 +33,7 @@ class Handler():
         return 1
     
     def key_check_user_type(handler, login):
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('Guest.db')
         cur = conn.cursor()
 
         cur.execute("SELECT * FROM Accounts WHERE username = ?", (login,))
@@ -52,7 +53,7 @@ class Handler():
         return 2
             
     def key_change_user_password(handler, old_passw, new_passw, conf_new_passw):
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('Guest.db')
         cur = conn.cursor()
 
         cur.execute("SELECT * FROM Accounts WHERE password_hash = ?", (old_passw,))
@@ -85,7 +86,7 @@ class Handler():
             
     
     def key_add_new_user(handler, username, passw, role):
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('Guest.db')
         cur = conn.cursor()
 
         if len(username) > 3 and len(username) < 50:
@@ -104,7 +105,7 @@ class Handler():
             return 3
         
     def key_change_current_user(handler, id, username, passw, role, status):
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('Guest.db')
         cur = conn.cursor()
 
         cur.execute("SELECT * FROM Accounts WHERE account_id = ?", (id,))
@@ -126,7 +127,7 @@ class Handler():
             return 3
         
     def key_del_current_user(handler, id):
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('Guest.db')
         cur = conn.cursor()
 
         cur.execute("DELETE FROM Accounts WHERE account_id = ?", (id,))

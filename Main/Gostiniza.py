@@ -1,11 +1,11 @@
 import sys, time
 from PySide6.QtWidgets import QDialog, QApplication, QWidget, QMainWindow
-from dialogs.ui_AutorizationDialog import Ui_AutorizationDiolog
-from dialogs.ui_IncorrectPassDialog import Ui_IncorrectPassDialog
-from dialogs.ui_SuccessAutorizeDialog import Ui_SuccessAutorizeDialog
-from dialogs.ui_BanDialog import Ui_BanDialog
-from admin_win import AdminPanel
-from user_win import UserPanel
+from AppHotel.UI.ui_AutorizationDialog import Ui_AutorizationDiolog
+from AppHotel.UI.ui_IncorrectPassDialog import Ui_IncorrectPassDialog
+from AppHotel.UI.ui_SuccessAutorizeDialog import Ui_SuccessAutorizeDialog
+from AppHotel.UI.ui_BanDialog import Ui_BanDialog
+from AppHotel.UI.admin_panel import AdminPanel
+from AppHotel.UI.user_panel import UserPanel
 
 class Authorization(QDialog):
     def __init__(self):
@@ -16,7 +16,7 @@ class Authorization(QDialog):
         self.autorize_ui.login_button.clicked.connect(lambda: self.validate_user_data())
 
     def validate_user_data(self):
-        from handler_db import Handler
+        from AppHotel.UI.HandL import Handler
         hand = Handler()
         login = self.autorize_ui.login_input.toPlainText()
         passw = self.autorize_ui.password_input.toPlainText()
@@ -33,7 +33,7 @@ class Authorization(QDialog):
             self.ban_dialog()
 
     def incorrect_dialog(self):
-        window = QWidget()
+        window = QDialog()
         ui = Ui_IncorrectPassDialog()
         ui.setupUi(window)
 
@@ -43,7 +43,7 @@ class Authorization(QDialog):
         window.exec()
 
     def success_dialog(self, status_code):
-        window = QWidget()
+        window = QDialog()
         ui = Ui_SuccessAutorizeDialog()
         ui.setupUi(window)
 
@@ -53,7 +53,7 @@ class Authorization(QDialog):
         window.exec()
 
     def ban_dialog(self):
-        window = QWidget()
+        window = QDialog()
         ui = Ui_BanDialog()
         ui.setupUi(window)
 

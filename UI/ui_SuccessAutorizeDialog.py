@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'IncorrectPassDialogOiAcft.ui'
+## Form generated from reading UI file 'SuccessAutorizeDialogEdvZmw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.3
 ##
@@ -18,20 +18,24 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QDialog, QHBoxLayout, QLabel,
     QPushButton, QSizePolicy, QVBoxLayout, QWidget)
 
-class Ui_IncorrectPassDialog(object):
-    def setupUi(self, IncorrectPassDialog):
-        if not IncorrectPassDialog.objectName():
-            IncorrectPassDialog.setObjectName(u"IncorrectPassDialog")
-        IncorrectPassDialog.resize(314, 165)
-        self.verticalLayout_2 = QVBoxLayout(IncorrectPassDialog)
+class Ui_SuccessAutorizeDialog(object):
+    def setupUi(self, SuccessAutorizeDialog):
+        if not SuccessAutorizeDialog.objectName():
+            SuccessAutorizeDialog.setObjectName(u"SuccessAutorizeDialog")
+        SuccessAutorizeDialog.resize(316, 159)
+        SuccessAutorizeDialog.setMinimumSize(QSize(316, 159))
+        self.verticalLayout_2 = QVBoxLayout(SuccessAutorizeDialog)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.widget = QWidget(IncorrectPassDialog)
+        self.widget = QWidget(SuccessAutorizeDialog)
         self.widget.setObjectName(u"widget")
         self.verticalLayout = QVBoxLayout(self.widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
-        self.label.setAlignment(Qt.AlignCenter)
+        font = QFont()
+        font.setPointSize(14)
+        self.label.setFont(font)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.label)
 
@@ -44,6 +48,7 @@ class Ui_IncorrectPassDialog(object):
         self.confirm_button = QPushButton(self.widget_2)
         self.confirm_button.setObjectName(u"confirm_button")
         self.confirm_button.setMinimumSize(QSize(25, 30))
+        self.confirm_button.setStyleSheet(u"background-color: rgb(135, 255, 169);")
 
         self.horizontalLayout.addWidget(self.confirm_button)
 
@@ -54,14 +59,14 @@ class Ui_IncorrectPassDialog(object):
         self.verticalLayout_2.addWidget(self.widget)
 
 
-        self.retranslateUi(IncorrectPassDialog)
+        self.retranslateUi(SuccessAutorizeDialog)
 
-        QMetaObject.connectSlotsByName(IncorrectPassDialog)
+        QMetaObject.connectSlotsByName(SuccessAutorizeDialog)
     # setupUi
 
-    def retranslateUi(self, IncorrectPassDialog):
-        IncorrectPassDialog.setWindowTitle(QCoreApplication.translate("IncorrectPassDialog", u"\u041d\u0435 \u0432\u0435\u0440\u043d\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c", None))
-        self.label.setText(QCoreApplication.translate("IncorrectPassDialog", u"\u041d\u0435 \u0432\u0435\u0440\u043d\u044b\u0439 \u043b\u043e\u0433\u0438\u043d \u0438\u043b\u0438 \u043f\u0430\u0440\u043e\u043b\u044c", None))
-        self.confirm_button.setText(QCoreApplication.translate("IncorrectPassDialog", u"\u041e\u043a", None))
+    def retranslateUi(self, SuccessAutorizeDialog):
+        SuccessAutorizeDialog.setWindowTitle(QCoreApplication.translate("SuccessAutorizeDialog", u"\u0423\u0441\u043f\u0435\u0445", None))
+        self.label.setText(QCoreApplication.translate("SuccessAutorizeDialog", u"\u0412\u044b \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043b\u0438\u0441\u044c!", None))
+        self.confirm_button.setText(QCoreApplication.translate("SuccessAutorizeDialog", u"\u041e\u043a", None))
     # retranslateUi
 
